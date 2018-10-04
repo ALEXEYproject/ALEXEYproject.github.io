@@ -1,0 +1,147 @@
+.catalog {
+    margin-top: 26px;
+}
+
+.catalog-aside-nav {
+    box-shadow: 0px 1px 4.95px 0.05px rgba(0, 0, 0, 0.27);
+}
+
+.catalog-aside-header {
+    z-index: 2;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgb(248, 195, 1);
+    box-shadow: 0px 1px 4.95px 0.05px rgba(0, 0, 0, 0.27);
+
+    text-align: center;
+
+    span {
+        font-size: 22px;
+        color: $blood-color;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+
+
+.catalog-aside-nav {
+    .nav-pills {}
+    .nav-pills>li.active>a {
+        color: $blood-color;
+        font-weight: 600;
+        font-style: italic;
+        text-decoration: underline;
+        background-color: inherit;
+        border-radius: 0;
+    }
+    .nav-pills>li.active>a:focus,
+    .nav-pills>li.active>a:hover {
+        background-color: #eee;
+    }
+
+    .nav-pills>li>a {
+        padding-left: 20px;
+        font-size: 16px;
+        color: rgb(58, 32, 35);
+        line-height: 1.9;
+    }
+}
+
+.sub-services {
+    li {
+
+        a {
+            width: 100%;
+            display: inline-block;
+            padding-left: 34px;
+            line-height: 2;
+            color: $blood-color;
+
+            &:hover {
+                text-decoration: none;
+                background-color: #eee;
+            }
+        }
+    }
+}
+
+.catalog-items {}
+
+.catalog-items {
+    margin-top: 50px;
+}
+
+.catalog-itm {
+    margin-top: 32px;
+    padding: 18px 16px 14px 18px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6.79px 0.21px rgba(0, 0, 0, 0.11);
+
+    h2 {
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 12px;
+    }
+    .price {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .description-text {
+        margin-top: 14px;
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        line-height: 1.467;
+    }
+    .itm__media {
+        width: 42%;
+        height: 100%;
+    }
+    .itm__description {
+        padding-left: 28px;
+        width: 58%;
+    }
+    .buttons-block {
+        margin-top: 24px;
+    }
+    .button_more-info {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:1199px) {
+    .catalog-aside-nav .nav-pills>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sub-services li a {
+        padding-left: 20px;
+    }
+}
+
+
+@media (max-width:625px) {
+    .catalog-itm {
+    	padding-left: 15px;
+    	padding-right: 15px;
+        flex-direction: column;
+        .itm__media {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .itm__description {
+        	margin-top: 20px;
+        	padding-left: 0;
+        	width: 100%;
+        }
+    }
+}
+
+@media (max-width:350px) {
+	.catalog-itm .button_more-info {
+		margin-left: 10px;
+	}
+}

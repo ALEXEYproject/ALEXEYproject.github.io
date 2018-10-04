@@ -1,0 +1,293 @@
+@import "bootstrap.min";
+@import "owl.carousel.min";
+@import "reset";
+@import "var";
+@import "header";
+@import "index";
+@import "contacts";
+@import "portfolio";
+@import "production";
+@import "catalog";
+@import "catalog-itm";
+@import "footer";
+@import "peppermint.appearance";
+@import "peppermint.required";
+@import "ul-lyst-style-img/ul-lyst-style-img";
+@import "jquery.fancybox.min";
+
+
+
+/*прилипающий футер*/
+
+.html-footer-sticky {
+    position: relative;
+    min-height: 100%;
+}
+
+.body-footer-sticky {
+    margin-bottom: 103px;
+}
+
+.footer-sticky {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 103px;
+}
+
+
+
+/*хлебные крошки*/
+
+.breadcrumb {
+    margin-top: 28px;
+    margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: inherit;
+    li {
+        a {
+            font-size: 16px;
+            color: $blood-color;
+        }
+    }
+}
+
+
+
+/*заголовки*/
+
+.h1 {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.h2 {
+
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 42px;
+    color: rgb(59, 32, 35);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: $blood-color;
+}
+
+.h1-section {
+    margin-top: 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    line-height: 0.8;
+    text-transform: uppercase;
+}
+
+
+
+/*карта*/
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*основное содержание страницы, нужно было назвать content*/
+
+.page {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+}
+
+.main-content-block {
+    margin-top: 40px;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+/*Стили модального окна*/
+
+.modal-header {
+    border-bottom: 0;
+}
+
+body {
+    font-size: 16px;
+    background-color: rgb(250, 250, 250);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    padding-right: 0 !important;
+}
+
+
+
+.text {}
+
+.color_blood {
+    color: $blood-color;
+}
+
+/*затемнение блока*/
+
+.hover_dark {
+    position: relative;
+    transition: 0.7s;
+    height: 100%;
+    display: block;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transition: 0.7s;
+    }
+}
+.hover_dark:hover:before {
+    background-color: black;
+    opacity: 0.5;
+}
+/*кнопки*/
+
+.button {
+    background-color: inherit;
+    border: inherit;
+}
+
+.button_yellow {
+    transition: 0.3s;
+    background-color: $yellow-color;
+}
+
+.button_blood {
+    transition: 0.3s;
+    background-color: $blood-color;
+    color: rgb(255, 255, 255);
+}
+
+.button_order {
+    color: $blood-color;
+    background-color: $yellow-color;
+    padding: 8px 24px 12px 24px;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $blood-color;
+        color: $yellow-color;
+        transition: 0.3s;
+    }
+}
+
+
+
+.button_more-info {
+    padding: 8px 16px 12px 16px;
+    border: 2px solid rgb(136, 136, 136);
+    background-color: rgb(249, 249, 249);
+    color: rgb(137, 137, 137);
+    transition: 0.3s;
+
+    &:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(136, 136, 136);
+        transition: 0.3s;
+    }
+}
+
+
+
+
+
+
+/*Состояния кнопок*/
+
+.button_yellow_hover:hover {
+    transition: 0.3s;
+    background-color: $blood-color;
+    color: $yellow-color;
+}
+
+.button_blood_hover:hover {
+    transition: 0.3s;
+    color: $yellow-color;
+}
+
+
+
+
+/*размер кнопки*/
+
+.button_md {
+    font-size: 14px;
+    padding: 8px 24px;
+}
+
+
+/*скрытый инпут показывающий с какой услуги пришла заявка*/
+
+.input-shadow {
+    position: absolute;
+    opacity: 0;
+}
+
+
+
+/*медиа запросы*/
+
+@media (max-width:991px) {
+    .button_md {
+        font-size: 14px;
+        padding: 14px 24px;
+    }
+
+    .body-footer-sticky {
+        margin-bottom: 207px;
+    }
+
+    .footer-sticky {
+        height: 207px;
+    }
+    .h1-section {
+        margin-top: 70px;
+        /*неправильно, обдумать этот блок*/
+    }
+}
+
+@media (max-width: 375px) {
+    .h2 {
+        font-size: 36px;
+    }
+    .breadcrumb li a {
+        font-size: 14px;
+    }
+}

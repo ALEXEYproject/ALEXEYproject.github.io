@@ -1,0 +1,22 @@
+.page-contacts {
+	.map {
+		min-height: 334px;
+	}
+}
+
+.contacts-info-block {
+	.index-address-h {
+		font-size: 22px;
+		font-weight: 600;
+	}
+	
+}
+
+@media (max-width:991px) {
+   .page-contacts {
+	.map {
+		margin-top: 20px;
+	}
+}
+}
+

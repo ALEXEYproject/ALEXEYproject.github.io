@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Легион Реклама</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <!-- build:css libs/bootstrap.min.css-->
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
+    <!-- endbuild -->
+    <!-- build:css css/main.min.css-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- endbuild -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+
+    function init() {
+        // Создание карты.    
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчнию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [54.621279, 39.731666],
+            controls: ['zoomControl'],
+
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 12
+
+
+        });
+
+        var myPlacemark = new ymaps.Placemark([54.612406, 39.778074], {
+            hintContent: 'Рекламная компания "Легион"',
+            balloonContent: 'Рязань, ул. Боголюбова, 109'
+
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/placemark.png',
+            // Размеры метки.
+            iconImageSize: [48, 64],
+
+        });
+
+        myMap.behaviors.disable('scrollZoom');
+        myMap.geoObjects.add(myPlacemark);
+
+    }
+    </script>
+</head>
+
+<body style="background-color: white;">
+    <!--мобильное меню-->
+    <div class="header-nav-mobile">
+        <button class="btn btn-menu-close">
+            X
+        </button>
+        <div class="nav-mobile-block">
+            <div id="menu-nav" class="mobile-menu">
+                <ul>
+                    <li><a href="catalog.html">Услуги</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="production.html">Производство</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/мобильное меню-->
+    <!--Хедер страницы-->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 header-left">
+                    <!--лого-->
+                    <a class="logo" href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <!--/лого-->
+                    <!--кнопка вызова мобильного меню-->
+                    <button class="button-header-menu header-button">
+                        <img src="img/header-button.png" alt="button">
+                    </button>
+                    <!--/мнопка вызова мобильного меню-->
+                </div>
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 col-lg-offset-1  header-content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 header-content-nav-block">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <!--Меню в хедере-->
+                                    <ul class="nav nav-pills">
+                                        <li role="presentation"><a href="catalog.html">Услуги</a></li>
+                                        <li role="presentation"><a href="portfolio.html">Портфолио</a></li>
+                                        <li role="presentation"><a href="production.html">Производство</a></li>
+                                        <li role="presentation"><a href="contacts.html">Контакты</a></li>
+                                    </ul>
+                                    <!--/Меню в хедере-->
+                                </div>
+                            </div>
+                            <div class="row header-row-2">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header-row-2-block">
+                                    <!--Почта в хедере-->
+                                    <a class="text color_blood header-email" href="mailto:legion-reklama@yandex.ru">legion-reklama@yandex.ru</a>
+                                    <!--/Почта в хедере-->
+                                    <!--Телефон в хедере мобильная версия-->
+                                    <ul class="header-phone header-phone-mobile">
+                                        <li><a href="tel:+791057150000">8 910 57 15 00 00</a></li>
+                                        <li><a href="tel:+74912241255">4912 24 12 55</a></li>
+                                    </ul>
+                                    <!--/Телефон в хедере мобильная версия--->
+                                    <!--кнопка оставить заявку-->
+                                    <button class="button button_yellow button_yellow_hover button_md" type="button" data-toggle="modal" data-target="#orderModal" data-whatever="@mdo">оставить заявку</button>
+                                    <!--/кнопка оставить заявку-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-0 header-phone-block">
+                            <!--Телефон в хедере десктоп версия--->
+                            <ul class="header-phone header-phone-desc">
+                                <li><a href="tel:+791057150000">8 910 57 15 00 00</a></li>
+                                <li><a href="tel:+74912241255">4912 24 12 55</a></li>
+                            </ul>
+                            <!--/Телефон в хедере десктоп версия--->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/Хедер страницы-->
+    <!--слайдер-->
+    <div class="index-slider">
+        <div id="indexSlider" class="peppermint">
+            <!--слайд-->
+            <div class="slide index-slider-slide" style="background-image: url(img/index-slider-img-1.jpg);">
+                <p>Более 20 лет на рынке рекламы</p>
+            </div>
+            <!--/слайд-->
+            <!--слайд-->
+            <div class="slide index-slider-slide" style="background-image: url(img/index-slider-img-1.jpg);">
+                <p>Более 20 лет на рынке рекламы</p>
+            </div>
+            <!--/слайд-->
+            <!--слайд-->
+            <div class="slide index-slider-slide" style="background-image: url(img/index-slider-img-1.jpg);">
+                <p>Более 20 лет на рынке рекламы</p>
+            </div>
+            <!--/слайд-->
+        </div>
+    </div>
+    <section class="index-main-description-block">
+        <img src="img/main-desc-img.png" alt="">
+        <div class="index-main-description">
+            <h1>Производство наружной рекламы всех видов</h1>
+            <p>Полный цикл производства: от дизайна до согласования рекламы в администрации</p>
+        </div>
+    </section>
+    <!--Табы с категориями работ-->
+    <section class="index-tabs-nav-block">
+        <!--Навигация по табам десктоп-->
+        <div class="index-tabs-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#bukvi" aria-controls="bukvi" role="tab" data-toggle="tab">Объемные<br>буквы</a></li>
+                            <li role="presentation"><a href="#pechat" aria-controls="pechat" role="tab" data-toggle="tab">Полноцветная печать</a></li>
+                            <li role="presentation"><a href="#prodaga" aria-controls="prodaga" role="tab" data-toggle="tab">Продажа и резка
+                                <br>пленки</a></li>
+                            <li role="presentation"><a href="#arenda" aria-controls="arenda" role="tab" data-toggle="tab">Полиграфия</a></li>
+                            <li role="presentation"><a href="#soglasovanie" aria-controls="soglasovanie" role="tab" data-toggle="tab">Услуги
+                                <br>согласования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/Навигация по табам десктоп-->
+        <!--Навигация по табам мобильная-->
+        <div class="index-tabs-nav-mobile">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Категории работ
+                    <span>
+                        <img src="img/arrow-down.png" alt="arrow">
+                    </span>
+                </button>
+                <ul role="tablist" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a href="#bukvi" aria-controls="bukvi" role="tab" data-toggle="tab">Объемные буквы</a></li>
+                    <li role="presentation"><a href="#pechat" aria-controls="pechat" role="tab" data-toggle="tab">Полноцветная печать</a></li>
+                    <li role="presentation"><a href="#prodaga" aria-controls="prodaga" role="tab" data-toggle="tab">Продажа и резка пленки</a></li>
+                    <li role="presentation"><a href="#arenda" aria-controls="arenda" role="tab" data-toggle="tab">Полиграфия</a></li>
+                    <li role="presentation"><a href="#soglasovanie" aria-controls="soglasovanie" role="tab" data-toggle="tab">Услуги согласования</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/Навигация по табам мобильная-->
+        <!--Табы-->
+        <div class="index-tabs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="bukvi">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 index-tabs-img">
+                                        <img src="img/tabs-img-1.jpg" alt="3D">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-lg-offset-1 col-md-offset-1 col-sm-12">
+                                        <h2 class="tabs-h2">Объемные буквы</h2>
+                                        <p class="tabs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="pechat">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 index-tabs-img">
+                                        <img src="img/tabs-img-1.jpg" alt="3D">
+                                    </div>
+                                    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12">
+                                        <h2 class="tabs-h2">Объемные буквы</h2>
+                                        <p class="tabs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="prodaga">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 index-tabs-img">
+                                        <img src="img/tabs-img-1.jpg" alt="3D">
+                                    </div>
+                                    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12">
+                                        <h2 class="tabs-h2">Объемные буквы</h2>
+                                        <p class="tabs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="arenda">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 index-tabs-img">
+                                        <img src="img/tabs-img-1.jpg" alt="3D">
+                                    </div>
+                                    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12">
+                                        <h2 class="tabs-h2">Объемные буквы</h2>
+                                        <p class="tabs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="soglasovanie">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 index-tabs-img">
+                                        <img src="img/tabs-img-1.jpg" alt="3D">
+                                    </div>
+                                    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12">
+                                        <h2 class="tabs-h2">Объемные буквы</h2>
+                                        <p class="tabs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Табы-->
+    </section>
+    <!--/Табы с категориями работ-->
+    <!--Секция с заказом звонка-->
+    <section class="index-feedback-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2 class="h2">
+                        оставьте информацию для просчета заказа
+                    </h2>
+                </div>
+            </div>
+            <form id="indexFeedbackForm" action="feedback.php" class="row index-feedback-form" method="post">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <input type="text" class="index-input" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <input type="tel" class="index-input phoneVerification" placeholder="+7" required>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <input type="email" class="index-input" placeholder="Ваше e-mail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+                            <textarea class="index-input" name="message" id="" cols="30" rows="10" placeholder="Описание Вашего заказа"></textarea>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <span class="index-feedback-time-question">Когда с вами связаться?</span>
+                            <div class="index-feedback-time-block">
+                                <select name="time" form="indexFeedbackForm">
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                </select>
+                                <div class="index-feedback-time-block__span">
+                                    <span>Мы работаем:</span>
+                                    <span>Пн-Чт: с 09:00 до 17:00</span>
+                                    <span>Пт:  с 09:00 до 16:00</span>
+                                </div>
+                            </div>
+                            <div class="indexFeedback-radio-block">
+                                <div>
+                                    <input type="radio" id="indexFeedbackRadio1" name="CallMeBack" value="Перезвоните мне"><span>Позвоните мне</span>
+                                </div>
+                                <div>
+                                    <input type="radio" id="indexFeedbackRadio1" name="CallMeBack" value="Мне удобнее общаться по e-mail"><span>Мне удобнее общаться по e-mail</span>
+                                </div>
+                            </div>
+                            <div class="input-feedback-submit">
+                                <button class="button button_blood button_blood_hover" type="submit">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--/Секция с заказом звонка-->
+    <!--Секция с галереей работ-->
+    <section class="index-gallery-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2">
+                        Наши работы
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <!--Галерея работ десктоп (просто набор блоков одинаковой ширины)-->
+        <div class="index-gallery">
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-1.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-2.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-1.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-2.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-1.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-2.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-1.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+            <a data-fancybox="gallery-job-index" href="img/index-gallery-img-2.jpg" class="index-gallery-itm"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+        </div>
+        <!--/Галерея работ десктоп (просто набор блоков одинаковой ширины)-->
+        <!--Галерея работ мобильная (подключается слайдер)-->
+        <div class="index-gallery-mobile">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-1.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-2.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-1.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-2.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-1.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-2.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-1.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-1.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a data-fancybox="gallery-job-mobile" href="img/index-gallery-img-2.jpg" class="index-gallery-itm-mobile"><img src="img/index-gallery-img-2.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!--/Галерея работ мобильная (подключается слайдер)-->
+    </section>
+    <!--/Секция с галереей работ-->
+    <!--Секция о производстве-->
+    <section class="index-about-production-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2">
+                        Мы создали все условия для качественной работы 
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="index-about-production-cont">
+            <!--Картинки о производстве десктоп-->
+            <div class="index-about-production-images">
+                <a data-fancybox="gallery-production" href="img/index-about-production-img-1.jpg" class="index-about-production-img"><img src="img/index-about-production-img-1.jpg" alt=""></a>
+                <a data-fancybox="gallery-production" href="img/index-about-production-img-2.jpg" class="index-about-production-img"><img src="img/index-about-production-img-2.jpg" alt=""></a>
+                <a data-fancybox="gallery-production" href="img/index-about-production-img-3.jpg" class="index-about-production-img"><img src="img/index-about-production-img-3.jpg" alt=""></a>
+            </div>
+            <!--/Картинки о производстве десктоп-->
+            <!--Картинки о производстве мобильная (подключается слайдер)-->
+            <div class="index-about-production-images_mobile">
+                <div class="owl-carousel owl-theme owl-about-production-images-mobile">
+                    <div class="item">
+                        <a data-fancybox="gallery-production-mobile" href="img/index-about-production-img-1.jpg" class="index-about-production-img"><img src="img/index-about-production-img-1.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a data-fancybox="gallery-production-mobile" href="img/index-about-production-img-2.jpg" class="index-about-production-img"><img src="img/index-about-production-img-2.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a data-fancybox="gallery-production-mobile" href="img/index-about-production-img-1.jpg" class="index-about-production-img"><img src="img/index-about-production-img-1.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!--/Картинки о производстве мобильная (подключается слайдер)-->
+            <!--Текст о производстве-->
+            <div class="index-about-production-text">
+                <h3>Собственное оборудование и производство</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed fermentum augue, eget tristique nisi. Maecenas ornare dignissim ligula, nec bibendum leo facilisis tincidunt. Praesent est nibh, condimentum eleifend arcu non, mattis consequat felis. Vestibulum nec ipsum nulla. Aenean congue et massa quis aliquam. Integer volutpat augue non consectetur egestas. Nullam vitae velit vel justo finibus placerat. Etiam volutpat commodo ex vel egestas. Vestibulum posuere malesuada mi, sed feugiat odio placerat tincidunt. Duis velit augue, interdum non ex vitae, aliquam rhoncus erat. Etiam auctor dolor est, dictum tincidunt mauris dapibus vehicula. Vivamus gravida quis tellus sed volutpat. Sed rutrum molestie tellus, vitae tempor ante vestibulum lobortis. Donec quam elit, vehicula et orci consequat, tempus elementum felis.</p>
+            </div>
+            <!--/Текст о производстве-->
+        </div>
+    </section>
+    <!--/Секция о производстве-->
+    <!--Секция с галереей партнеров-->
+    <section class="index-partners-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2">
+                        Наши партнеры 
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!--Галерея партнеров дестоп-->
+                    <div class="partners-items">
+                        <div class="partners-itm">
+                            <img src="img/partners-img-1.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-1.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-1.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-1.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-1.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-2.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-2.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-2.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-2.jpg" alt="">
+                        </div>
+                        <div class="partners-itm">
+                            <img src="img/partners-img-2.jpg" alt="">
+                        </div>
+                    </div>
+                    <!--/Галерея партнеров дестоп-->
+                    <!--Галерея партнеров мобильная (подключается слайдер)-->
+                    <div class="partners-items-mobile">
+                        <div class="owl-carousel owl-theme owl-partners-items-mobile">
+                            <div class="item">
+                                <img src="img/partners-img-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="img/partners-img-2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Галерея партнеров мобильная (подключается слайдер)-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/Секция с галереей партнеров-->
+    <!--Секция с картой-->
+    <section class="map-container">
+        <!--блок с информацией мобильный-->
+        <div class="on-map-block_mobile">
+            <ul>
+                <li>
+                    <span>Мы находимся по адресу</span>
+                    <span>Ул. Боголюбова, 109</span>
+                </li>
+                <li>
+                    <span>Часы работы</span>
+                    <span>Пн - Чт: с 09:00 до 17:00</span>
+                    <span>Пт: с 09:00 до 16:00</span>
+                </li>
+                <li>
+                    <span>Контактная информация:</span>
+                    <a>8 910 57 15 000</a>
+                    <span>4912 240 - 855 | 4912 241 255</span>
+                    <a href="email:legion-reklama@yandex.ru">legion-reklama@yandex.ru</a>
+                </li>
+            </ul>
+            <div class="buttons">
+                <button class="button-show-map button button_blood button_blood_hover">Посмотреть на карте</button>
+            </div>
+        </div>
+        <!--/блок с информацией мобильный-->
+        <!--контейнер карты-->
+        <div class="map-block" id="map">
+        </div>
+        <!--/контейнер карты-->
+        <!--блок с информацией десктопный-->
+        <div class="on-map-block">
+            <ul class="ul-lyst-style-img on-map-block-list">
+                <li style="background: url(img/list-bg-1.png) no-repeat 6px 14px;">
+                    <span class="index-address-h">Мы находимся по адресу</span>
+                    <span class="index-address-span">Ул. Боголюбова, 109</span>
+                </li>
+                <li style="background: url(img/list-bg-2.png) no-repeat 6px 50px;">
+                    <span class="index-address-h">Часы работы</span>
+                    <span class="index-address-span">Пн - Чт: с 09:00 до 17:00</span>
+                    <span class="index-address-span">Пт: с 09:00 до 16:00</span>
+                </li>
+                <li style="background: url(img/list-bg-3.png) no-repeat 6px 56px;">
+                    <span class="index-address-h">Контактная информация:</span>
+                    <a class="index-address-span" href="tel:89105715000">8 910 57 15 000</a>
+                    <span class="index-address-span">4912 240 - 855 | 4912 241 255</span>
+                    <a class="index-address-span" href="email:legion-reklama@yandex.ru">legion-reklama@yandex.ru</a>
+                </li>
+            </ul>
+        </div>
+        <!--/блок с информацией десктопный-->
+    </section>
+    <!--/Секция с картой-->
+    <!--футер-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <!--лого-->
+                    <a href="index.html" class="footer-logo">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <!--/лого-->
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+                    <div class="footer-content">
+                        <!--навигация в футере-->
+                        <ul class="nav nav-pills">
+                            <li role="presentation"><a href="catalog.html">Услуги</a></li>
+                            <li role="presentation"><a href="portfolio.html">Портфолио</a></li>
+                            <li role="presentation"><a href="production.html">Производство</a></li>
+                            <li role="presentation"><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                        <!--/навигация в футере-->
+                        <div class="footer-left">
+                            <!--телефон в футере-->
+                            <a class="footer-tel" href="tel:891057150000">8 910 57 15 00 00</a>
+                            <!--/телефон в футере-->
+                            <!--кнопка оставить заявку-->
+                            <a class="footer-button" type="button" data-toggle="modal" data-target="#orderModal" data-whatever="@mdo" href="#">Оставить заявку</a>
+                            <!--/кнопка оставить заявку-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/футер-->
+    <!--модальное окно-->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Оставить заявку</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="order">
+                        <div class="form-group">
+                            <input type="hidden" name="title" value="заявка сайта">
+                            <label for="recipient-name" class="control-label">Имя</label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Телефон</label>
+                            <input type="tel" class="phoneVerification form-control" id="recipient-phone" placeholder="+7">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Сообщение</label>
+                            <textarea class="form-control" id="message-text" placeholder="Комментарий"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">закрыть</button>
+                    <button type="button" class="btn button_yellow button_yellow_hover">Отправить сообщение</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/модальное окно-->
+    <!-- build:js libs/jquery-3.3.1.min.js-->
+    <script src="libs/jquery-3.3.1.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/owl.carousel.min.js-->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/peppermint.min.js-->
+    <script src="js/peppermint.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/main.min.js-->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/PhoneVerification.min.js-->
+    <script src="js/PhoneVerification.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/bootstrap.min.js-->
+    <script src="js/bootstrap.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/jquery.fancybox.min.js-->
+    <script src="js/jquery.fancybox.min.js"></script>
+    <!-- endbuild -->
+    <script>
+    var indexSlider = $('#indexSlider');
+    indexSlider.Peppermint({
+        slideshow: true,
+        speed: 500,
+        slideshowInterval: 5000,
+        mouseDrag: false,
+        dots: false,
+        stopSlideshowAfterInteraction: true
+
+    });
+    $('#myTabs a[href="#profile"]').tab('show');
+
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+    $('.owl-partners-items-mobile').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            }
+        }
+    });
+    $('.owl-about-production-images-mobile').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

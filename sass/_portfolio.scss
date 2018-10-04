@@ -1,0 +1,39 @@
+.portfolio {
+    padding-bottom: 60px;
+}
+
+.portfolio-items {
+    margin-top: -52px;
+}
+
+.portfolio-itm {
+    display: block;
+    margin-top: 52px;
+    min-height: 265px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 6.37px 0.63px rgba(0, 0, 0, 0.11);
+    text-align: center;
+    padding: 8px 10px 20px 14px;
+    transition: 0.7s;
+    h2 {
+        margin-top: 16px;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        line-height: 1.333;
+    }
+    &:hover {
+        box-shadow: 0px 2px 27px 0px rgba(0, 0, 0, 0.16);
+        transition: 0.7s;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .portfolio-itm {
+    	margin: auto;
+    	margin-top: 30px;
+    	max-width: 360px;
+    	min-height: auto;
+    }
+}

@@ -1,0 +1,247 @@
+.header {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
+.logo {
+    display: inline-block;
+    margin-top: 22px;
+}
+
+.header-content-nav-block {
+    width: 71%;
+    padding-right: 0;
+}
+
+.header-phone-block {
+    width: 29%;
+}
+
+.header-phone {
+    text-align: right;
+    li {
+        a {
+            color: black;
+            font-size: 24px;
+            line-height: 1;
+        }
+        &:last-child {
+            margin-top: 8px;
+        }
+    }
+}
+
+.header {
+    .nav>li>a {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+
+    .nav-pills>li>a {
+        color: $blood-color;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+
+
+    .nav-pills>li.active>a,
+    .nav-pills>li.active>a:focus,
+    .nav-pills>li.active>a:hover {
+        font-weight: 600;
+        color: $yellow-color;
+        background-color: inherit;
+        text-decoration: underline;
+    }
+
+    .nav-pills>li>a {
+        border-radius: inherit;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: inherit;
+        color: $yellow-color;
+    }
+}
+
+
+.header-row-2 {
+    margin-top: 16px;
+
+    a {
+        margin-left: 26%;
+        display: inline-block;
+
+        &:hover {
+            color: $blood-color;
+        }
+    }
+    .button {
+        margin-left: 14px;
+    }
+}
+
+.header-button {
+    display: none;
+}
+
+.header-phone-mobile {
+    display: none;
+}
+
+.header-phone-desc {
+    display: block;
+}
+
+.header-nav-mobile {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f9f8f3;
+    top: -100vh;
+    z-index: 1000;
+    transition: 1s;
+
+    .btn-menu-close {
+        background-color: initial;
+        font-size: 36px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+.mobile-menu {
+    li {
+        text-align: center;
+    }
+    a {
+        color: $blood-color;
+        font-size: 24px;
+        line-height: 2;
+        &:hover {
+            color: $blood-color;
+        }
+        &:active {
+            color: $blood-color;
+        }
+    }
+}
+
+.header-nav-mobile-open {
+    top: 0;
+    transition: 1s;
+}
+
+@media (max-width:1199px) {
+    .header-content-nav-block {
+        width: 66.66666667%;
+        padding-right: 15px;
+
+        .nav.nav-pills {
+            margin-left: -15px;
+            margin-right: -15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav>li>a {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .header-phone-block {
+        width: 33.33333333%;
+    }
+    .header-row-2 a {
+        margin-left: 0;
+    }
+    .header-row-2-block {
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:991px) {
+    .header-button {
+        display: block;
+        background-color: inherit;
+        border: inherit;
+    }
+    .header-content-nav-block {
+        .nav.nav-pills {
+            display: none;
+        }
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        margin-top: 0;
+    }
+    .header-phone-mobile {
+        display: block;
+        height: 100%;
+        li {
+            display: block;
+            text-align: left;
+        }
+    }
+    .header-phone {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .header-phone-desc {
+        display: none;
+    }
+    .header-row-2-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-row-2-block .header-email {
+        display: none;
+    }
+    .header-content-nav-block {
+        width: 100%;
+    }
+}
+
+
+@media (max-width:767px) {}
+
+@media (max-width:400px) {
+    .header-phone li a {
+        font-size: 18px;
+    }
+    .logo {
+        max-width: 220px;
+    }
+}
+
+@media (max-width:350px) {
+    .header-row-2 .button {
+        padding: 10px 15px;
+    }
+    .header-phone-mobile {
+        li {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+}

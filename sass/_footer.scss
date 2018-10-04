@@ -1,0 +1,144 @@
+.footer {
+    width: 100%;
+    padding-top: 29px;
+    padding-bottom: 12px;
+    background-color: $yellow-color;
+}
+
+.footer {}
+
+.footer-content {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+
+    .nav-pills>li>a {
+        font-size: 16px;
+        color: rgb(58, 32, 35);
+    }
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-tel {
+    margin-top: -34px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.footer-button {
+    margin-top: 6px;
+    font-size: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    line-height: 1.5;
+    text-align: center;
+    background-color: $blood-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        color: white;
+        background-color: $blood-color;
+    }
+}
+
+.footer-button:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-button:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1199px) {
+    .footer-content {
+        padding-left: 0px;
+        .nav.nav-pills {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .nav>li>a {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    .footer-logo {
+        margin-top: 6px;
+    }
+}
+
+@media (max-width:991px) {
+    .footer-content {
+        .nav.nav-pills {
+            display: none;
+        }
+    }
+    .footer-content {
+        justify-content: flex-end;
+    }
+    .footer-logo {
+        margin-top: 6px;
+    }
+}
+
+
+@media (max-width:767px) {
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+    .footer-content {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .footer-tel {
+        margin-top: 0;
+    }
+    .footer-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:475px) {
+    .indexFeedback-radio-block {
+        flex-direction: column;
+    }
+    .index-slider {
+        min-height: 400px;
+    }
+    .index-slider-slide {
+        padding-bottom: 50px;
+        min-height: 400px;
+    }
+}
